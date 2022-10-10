@@ -17,7 +17,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 600, 1); 
         prepare();
-        prepare1();
+        act();
     }
     
     /**
@@ -31,8 +31,21 @@ public class MyWorld extends World
         Enemy enemy = new Enemy();
         addObject(enemy,798,331);
     }
-
-    private void prepare1()
+    int enemyCount = 0;
+    public void act(){
+        enemyCount++;
+        if (enemyCount==120){
+            addenemy();
+            enemyCount = 0;
+        }
+    }
+    public void addenemy(){
+        int enemyY = Greenfoot.getRandomNumber(getHeight());
+        Enemy enemy = new Enemy();
+        addObject(enemy, 800, enemyY); 
+    }
+    
+    public void prepare1()
     {
         Hero hero1 = new Hero();
         addObject(hero1, 2,350);

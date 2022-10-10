@@ -25,9 +25,9 @@ public class Enemy extends Actor
     public void act()
     {
         // Add your action code here.
-        // setRotation(90);
+        //setRotation(90);
         moveEnemy();
-        resetPosition();
+        removeEnemy();
         //move(speed);
     }
     
@@ -39,9 +39,9 @@ public class Enemy extends Actor
         setLocation(getX()-speed,getY());
     }
     
-    public void resetPosition(){
+    public void removeEnemy(){
         if (getX()==0){
-            setLocation(799,getY());
+            getWorld().removeObject(this);
         }
     }
 }

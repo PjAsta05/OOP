@@ -15,7 +15,7 @@ public class Hero extends Actor
     public void act()
     {
         // Add your action code here.
-        moveHero1();
+        moveHero();
         resetPosition();
     }
     
@@ -35,29 +35,7 @@ public class Hero extends Actor
         }
     }
     
-    public void moveHero1(){
-        if (Greenfoot.isKeyDown("a")){
-            turn(-05);
-        }
-        if (Greenfoot.isKeyDown("d")){
-            turn(+5);
-        }
-        
-        if (Greenfoot.isKeyDown("w")){
-            move(+5);
-        }
-        if (Greenfoot.isKeyDown("s")){
-            move(-5);
-        }
-    }
-    
     public void resetPosition(){
-        if (getX()==799){
-            setLocation(1,getY());
-        }
-        if (getX()==0){
-            setLocation(798,getY());
-        }
         if (getY()==599){
             setLocation(getX(),1);
         }

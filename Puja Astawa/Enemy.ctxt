@@ -11,5 +11,5 @@ comment3.target=void\ act()
 comment4.params=
 comment4.target=void\ moveEnemy()
 comment5.params=
-comment5.target=void\ resetPosition()
+comment5.target=void\ removeEnemy()
 numComments=6

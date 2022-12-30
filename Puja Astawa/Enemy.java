@@ -27,10 +27,10 @@ public class Enemy extends Actor
         // setRotation(90);
         moveEnemy();
         removeEnemy();
+        shootBullet();
         //resetPosition();
         //move(speed);
     }
-    
     public void moveEnemy(){
         turn(60);
         move(speed);
@@ -38,10 +38,18 @@ public class Enemy extends Actor
         getY();
         setLocation(getX()-speed,getY());
     }
-    
     public void removeEnemy(){
         if (getX()==0){
             getWorld().removeObject(this);
+        }
+    }
+    int bulletCount = 0;
+    public void shootBullet(){
+        bulletCount++;
+        if (bulletCount==20){
+            EnemyBullet bullet = new EnemyBullet();
+            getWorld().addObject (bullet, getX()+50,getY());
+            bulletCount = 0;
         }
     }
 }

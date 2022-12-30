@@ -17,6 +17,7 @@ public class Hero extends Actor
         resetposition();
         shootBullet();
         heroHit();
+        heroHitLaser();
     }
     public void heromove(){
         // Add your action code here.
@@ -45,6 +46,14 @@ public class Hero extends Actor
     public void heroHit(){
         if (isTouching(Enemy.class)){
             removeTouching(Enemy.class);
+            Boom boom = new Boom();
+            getWorld().addObject(boom, getX(), getY());
+            setLocation(50, 200);
+        }
+    }
+    public void heroHitLaser(){
+        if (isTouching(EnemyBullet.class)){
+            removeTouching(EnemyBullet.class);
             Boom boom = new Boom();
             getWorld().addObject(boom, getX(), getY());
             setLocation(50, 200);
